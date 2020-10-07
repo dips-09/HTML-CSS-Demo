@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Homework 2
+        </title>
+        <script src="hw.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>
+            Hello world
+        </h1>
+        <h2>Start typing...</h2>
+        <input type="text" id="textinput"/>
+        <script>
+            $(document).ready(function(){
+                $("#textinput").on("keypress",function(){
+                    $("h2").hide();
+                });
+            });
+        </script>
+
+
+        <div style="width: 150; height: 80; color: cornflowerblue;" class="drag">Drag me </div>
+        <div style="width: 150; height: 80; background-color: yellowgreen;" class="drop">Drop here </div>
+
+        <script>
+            $(document).ready(function(){
+                $(".drag").draggable();
+                $(".drop").droppable();
+            })
+        </script>
+
+
+        <h2>Enter your birthday</h2>
+        <input type="text" class="date">
+        <script>
+            $(document).ready(function(){
+                $(".date").datepicker();
+                
+            })
+        </script>
+
+    </body>
+</html>

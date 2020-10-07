@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            jQuery Demo
+        </title>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" 
+  crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <h1>
+            jQuery Demo
+        </h1>
+        <p>Let's begin with the journey</p>
+        <script>
+            $(document).ready(function(){
+                $("#sub").click(function(){
+                    alert("Value: " + $("#sometext").val());
+                })
+            })
+        </script>
+        <input type="text" id="sometext" value=""/>
+        <button id="sub">Submit</button>
+
+
+
+
+        <!-- jQuery events -->
+        <div class="puppers">
+            <img src="puppie/goldie.jpg">
+            <img src="puppie/goldie.jpg">
+            <img src="puppie/goldie.jpg">
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#try").click(function(){
+                    $("img").addClass("styleclass");
+                });
+            });
+        </script>
+
+        <style>
+            .styleclass{
+                border: 5px solid green
+            }
+        </style>
+        <button id="try">Try addClass()</button>
+
+        <p>Start Typing.....</p>
+        <input id="press" type="text" size="10">
+        <script>
+            $(document).ready(function(){
+                $("input").on("keypress", function(){
+                    $("p:last").hide();
+                });
+            });
+        </script>
+
+
+        <!-- jQuery effects -->
+        <button class="button" id="hide">Hide</button>
+        <button class="button" id="show">Show</button>
+        <div class="puppers">
+            <img id="img" src="puppie/goldie.jpg">
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#hide").click(function(){
+                    $("#img").hide();
+                });
+                $("#show").click(function(){
+                    $("#img").show();
+                });
+            })
+        </script>
+
+
+
+        <!-- jQuery UI -->
+        <!-- draggable/droppable -->
+        <style>
+            #drag{
+                width: 150px;
+                height: 60px;
+                background-color: blueviolet;
+
+                
+            }
+            #drop{
+                width: 150px;
+                height: 60px;
+                background-color: lightskyblue;
+            }
+        </style>
+        <script>
+            $(function(){
+                $("#drag").draggable();
+                $("#drop").droppable();
+            });
+        </script>
+        <div id="drag">
+            Drag me around
+        </div>
+        <div id="drop">
+            drop here
+        </div>
+
+
+        <!-- Datepicker -->
+         <input type="text" id="date" size="10">
+         <script>
+             $("#date").datepicker();
+         </script>
+
+
+        
+    </body>
+</html>
